@@ -105,9 +105,10 @@ h1 em::after { content: ""; position: absolute; z-index: -1; left: -3px; right: 
 .quiet-note { margin: 19px 0 0; color: #8b9b95; font-size: .7rem; }
 
 .river-scene { position: relative; overflow: hidden; min-width: 0; border: 2px solid #b9cec4; border-radius: 21px; background: #d9e7df; box-shadow: inset 0 0 0 9px rgba(255,253,247,.5); }
-.friends-image { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: saturate(.92) contrast(.98); transition: transform 8s ease; }
-.river-scene:hover .friends-image { transform: scale(1.035); }
-.photo-shade { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(19,44,37,.48) 100%); pointer-events: none; }
+.river-scene::before { content: ""; position: absolute; z-index: 0; inset: -28px; background: url("friends-embankment.webp") center / cover no-repeat; filter: blur(20px) saturate(.7); opacity: .35; transform: scale(1.08); }
+.friends-image { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; filter: saturate(.92) contrast(.98); transition: filter .6s ease; }
+.river-scene:hover .friends-image { filter: saturate(1) contrast(1); }
+.photo-shade { position: absolute; z-index: 2; inset: 0; background: linear-gradient(to bottom, transparent 58%, rgba(19,44,37,.38) 100%); pointer-events: none; }
 .photo-tape { position: absolute; z-index: 4; top: 13px; left: 50%; width: 92px; height: 24px; background: rgba(255,241,183,.72); box-shadow: 0 2px 4px rgba(39,58,48,.12); transform: translateX(-50%) rotate(-2deg); backdrop-filter: blur(2px); }
 .photo-doodles { position: absolute; z-index: 5; right: 18px; top: 18px; display: flex; flex-direction: column; gap: 6px; }
 .photo-doodles span { display: grid; place-items: center; width: 38px; height: 38px; border: 2px solid rgba(255,255,255,.75); border-radius: 50%; background: rgba(255,253,247,.85); box-shadow: 3px 3px 0 rgba(44,86,72,.18); font-size: 1rem; transform: rotate(5deg); }
