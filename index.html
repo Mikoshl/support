@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#132b35" />
+    <meta name="description" content="Небольшое приглашение для Андрея — без сроков и обязательств" />
+    <title>Андрей, мы рядом</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Pangolin&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+    <main>
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="personal-mark"><span>А</span> Андрею — от нас с Ритой</div>
+          <p class="eyebrow">Есть одна простая идея</p>
+          <h1 id="hero-title">Андрей, давай<br />как-нибудь <em>прогуляемся?</em></h1>
+          <p class="intro">
+            Если в какой-то момент захочется выйти из дома, пройтись или просто
+            где-нибудь посидеть — напиши. Можем втроём выбраться на набережную.
+            Можно болтать, можно молчать — как тебе будет комфортнее.
+          </p>
+          <button class="primary-button" id="start-button" type="button">
+            Посмотреть, что можно придумать <span aria-hidden="true">→</span>
+          </button>
+          <p class="quiet-note">Не обязательно решать сейчас.</p>
+        </div>
+
+        <div class="river-scene" aria-hidden="true">
+          <img class="friends-image" src="friends-embankment.webp" alt="" />
+          <div class="photo-shade"></div>
+          <div class="photo-tape"></div>
+          <div class="photo-doodles"><span>☕</span><span>🌊</span></div>
+          <div class="scene-label"><small>Примерно так</small><strong>Кофе, набережная и мы втроём</strong></div>
+        </div>
+      </section>
+
+      <section class="choices is-hidden" id="choices" aria-labelledby="choices-title">
+        <header>
+          <p class="eyebrow">Если однажды захочется</p>
+          <h2 id="choices-title">Что бы тебе подошло?</h2>
+          <p>Выбирай любой вариант. Или вообще ничего не выбирай — мы никуда не спешим.</p>
+        </header>
+
+        <div class="choice-grid" role="list">
+          <button
+            class="choice-card"
+            type="button"
+            data-message="Давайте как-нибудь пройдёмся по набережной. Я напишу, когда захочу выбраться 🌊"
+            data-title="Пройтись по набережной"
+          >
+            <span class="choice-icon water">🌊</span>
+            <span><strong>Пройтись по набережной</strong><small>Можем поговорить обо всём подряд</small></span>
+            <i aria-hidden="true">→</i>
+          </button>
+
+          <button
+            class="choice-card"
+            type="button"
+            data-message="Можно будет просто пройтись, без разговоров. Я дам знать, когда захочется 🌙"
+            data-title="Погулять молча"
+          >
+            <span class="choice-icon night">🌙</span>
+            <span><strong>Погулять молча</strong><small>Без вопросов — просто пройтись рядом</small></span>
+            <i aria-hidden="true">→</i>
+          </button>
+
+          <button
+            class="choice-card"
+            type="button"
+            data-message="Можно как-нибудь взять кофе и посидеть. Я напишу, когда захочу выбраться ☕"
+            data-title="Взять кофе"
+          >
+            <span class="choice-icon coffee">☕</span>
+            <span><strong>Взять кофе</strong><small>Сядем где-нибудь и немного переключимся</small></span>
+            <i aria-hidden="true">→</i>
+          </button>
+
+          <button
+            class="choice-card"
+            type="button"
+            data-message="Давайте как-нибудь посидим в Discord. Я напишу, когда будет настроение 🎮"
+            data-title="Зайти в Discord"
+          >
+            <span class="choice-icon game">🎮</span>
+            <span><strong>Зайти в Discord</strong><small>Если дома сегодня спокойнее</small></span>
+            <i aria-hidden="true">→</i>
+          </button>
+        </div>
+
+        <button class="not-now" id="not-now-button" type="button">Пока не хочется — напишу сам</button>
+      </section>
+
+      <section class="answer is-hidden" id="answer" aria-labelledby="answer-title">
+        <div class="answer-card">
+          <div class="answer-icon" aria-hidden="true">✓</div>
+          <p class="eyebrow">Хорошо</p>
+          <h2 id="answer-title">Значит, так и сделаем.</h2>
+          <p id="answer-copy">
+            Когда захочешь — отправь сообщение, и договоримся. Никуда не спешим.
+          </p>
+          <div class="selected-answer" id="selected-answer"></div>
+          <button class="primary-button" id="share-button" type="button">
+            Поделиться ответом <span aria-hidden="true">↗</span>
+          </button>
+          <p class="share-status" id="share-status" aria-live="polite"></p>
+          <button class="change-button" id="change-button" type="button">Выбрать другой вариант</button>
+        </div>
+      </section>
+
+      <section class="answer is-hidden" id="later" aria-labelledby="later-title">
+        <div class="answer-card later-card">
+          <div class="answer-icon" aria-hidden="true">∞</div>
+          <p class="eyebrow">Хорошо</p>
+          <h2 id="later-title">Тогда просто знай: мы рядом.</h2>
+          <p>
+            Ничего объяснять не нужно. Когда захочется — напиши. Хоть через неделю,
+            хоть позже.
+          </p>
+          <button class="change-button" id="back-button" type="button">Вернуться к вариантам</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>Мы рядом. Без лишних слов.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
